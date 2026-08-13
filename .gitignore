@@ -1,0 +1,41 @@
+# Vivado project files & backups
+*.jou
+*.log
+*.str
+*.zip
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.hbs
+*.xpr
+*.backup.jou
+*.backup.log
+webtalk*.jou
+webtalk*.log
+vivado*.jou
+vivado*.log
+vivado_pid*.str
+xsim.dir/
+*.wdb
+*.pb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+venv/
+env/
+*.egg-info/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
