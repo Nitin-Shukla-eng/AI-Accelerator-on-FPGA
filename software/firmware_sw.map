@@ -1,0 +1,165 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+                              src/software_nn.o (__mulsi3)
+/usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+                              src/main_sw.o (__udivsi3)
+
+Discarded input sections
+
+ .debug_line    0x00000000       0x7a /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_line_str
+                0x00000000       0xa5 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_info    0x00000000       0x31 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_abbrev  0x00000000       0x28 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_aranges
+                0x00000000       0x20 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_str     0x00000000       0xbc /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .debug_line    0x00000000      0x153 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_line_str
+                0x00000000       0xa2 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_info    0x00000000       0x5f /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_abbrev  0x00000000       0x28 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_aranges
+                0x00000000       0x20 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_str     0x00000000       0xe9 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x00000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x00000000      0x700
+                0x00000000                        . = ALIGN (0x4)
+ *(.text.start)
+ .text.start    0x00000000       0xa8 linker/start.o
+                0x00000000                _start
+ *(.text)
+ .text          0x000000a8        0x0 linker/start.o
+ .text          0x000000a8        0x0 src/main_sw.o
+ .text          0x000000a8      0x1b4 src/uart.o
+                0x000000a8                uart_init
+                0x000000b4                uart_putchar
+                0x000000ec                uart_puts
+                0x00000120                uart_print_dec
+                0x000001d4                uart_print_hex
+                0x00000250                uart_getchar_nonblock
+ .text          0x0000025c        0x8 src/timer.o
+                0x0000025c                timer_read_cycles
+ .text          0x00000264      0x1cc src/software_nn.o
+                0x00000264                software_nn_infer
+ .text          0x00000430       0x24 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+                0x00000430                __mulsi3
+ .text          0x00000454       0xb4 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+                0x00000454                __divsi3
+                0x0000045c                __hidden___udivsi3
+                0x0000045c                __udivsi3
+                0x000004a4                __umodsi3
+                0x000004d8                __modsi3
+ *(.text*)
+ .text.startup  0x00000508      0x1f8 src/main_sw.o
+                0x00000508                main
+                0x00000700                        . = ALIGN (0x4)
+
+.rodata         0x00000700      0x254
+                0x00000700                        . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x00000700       0xb4 src/main_sw.o
+ .rodata        0x000007b4       0x11 src/uart.o
+ *fill*         0x000007c5        0x3 
+ .rodata        0x000007c8       0x70 src/software_nn.o
+ *(.rodata*)
+ .rodata.str1.4
+                0x00000838      0x11c src/main_sw.o
+ *(.srodata)
+ *(.srodata*)
+                0x00000954                        . = ALIGN (0x4)
+
+.rela.dyn       0x00000954        0x0
+ .rela.text.start
+                0x00000954        0x0 linker/start.o
+
+.data           0x00000954        0x0
+                0x00000954                        . = ALIGN (0x4)
+                0x00000954                        _sdata = .
+ *(.data)
+ .data          0x00000954        0x0 linker/start.o
+ .data          0x00000954        0x0 src/main_sw.o
+ .data          0x00000954        0x0 src/uart.o
+ .data          0x00000954        0x0 src/timer.o
+ .data          0x00000954        0x0 src/software_nn.o
+ .data          0x00000954        0x0 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .data          0x00000954        0x0 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ *(.data*)
+ *(.sdata)
+ *(.sdata*)
+                0x00000954                        . = ALIGN (0x4)
+                0x00000954                        _edata = .
+
+.bss            0x00000954        0x0
+                0x00000954                        . = ALIGN (0x4)
+                0x00000954                        _sbss = .
+ *(.bss)
+ .bss           0x00000954        0x0 linker/start.o
+ .bss           0x00000954        0x0 src/main_sw.o
+ .bss           0x00000954        0x0 src/uart.o
+ .bss           0x00000954        0x0 src/timer.o
+ .bss           0x00000954        0x0 src/software_nn.o
+ .bss           0x00000954        0x0 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .bss           0x00000954        0x0 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ *(.bss*)
+ *(.sbss)
+ *(.sbss*)
+ *(COMMON)
+                0x00000954                        . = ALIGN (0x4)
+                0x00000954                        _ebss = .
+                0x00008000                        _stack_top = (ORIGIN (ram) + LENGTH (ram))
+LOAD linker/start.o
+LOAD src/main_sw.o
+LOAD src/uart.o
+LOAD src/timer.o
+LOAD src/software_nn.o
+LOAD /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a
+OUTPUT(firmware_sw.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x1c
+ .riscv.attributes
+                0x00000000       0x1a linker/start.o
+ .riscv.attributes
+                0x0000001a       0x1c src/main_sw.o
+ .riscv.attributes
+                0x00000036       0x1c src/uart.o
+ .riscv.attributes
+                0x00000052       0x1c src/timer.o
+ .riscv.attributes
+                0x0000006e       0x1c src/software_nn.o
+ .riscv.attributes
+                0x0000008a       0x1a /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(muldi3.o)
+ .riscv.attributes
+                0x000000a4       0x1a /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+
+.comment        0x00000000       0x18
+ .comment       0x00000000       0x18 src/main_sw.o
+                                 0x19 (size before relaxing)
+ .comment       0x00000018        0x0 src/uart.o
+                                 0x19 (size before relaxing)
+ .comment       0x00000018        0x0 src/timer.o
+                                 0x19 (size before relaxing)
+ .comment       0x00000018        0x0 src/software_nn.o
+                                 0x19 (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 src/main_sw.o
+ .note.GNU-stack
+                0x00000000        0x0 src/uart.o
+ .note.GNU-stack
+                0x00000000        0x0 src/timer.o
+ .note.GNU-stack
+                0x00000000        0x0 src/software_nn.o

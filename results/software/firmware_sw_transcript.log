@@ -1,0 +1,30 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.07.22 14:43:59 =~=~=~=~=~=~=~=~=~=~=~=
+TinyRISC-TinyML test-vector run
+Version: 1 (software)
+vectors: 20
+---
+vector 0: prediction=0 expected=0 OK cycles=30382
+vector 1: prediction=1 expected=1 OK cycles=30382
+vector 2: prediction=0 expected=0 OK cycles=30382
+vector 3: prediction=1 expected=1 OK cycles=30383
+vector 4: prediction=0 expected=0 OK cycles=30382
+vector 5: prediction=0 expected=0 OK cycles=30382
+vector 6: prediction=0 expected=0 OK cycles=30382
+vector 7: prediction=1 expected=1 OK cycles=30383
+vector 8: prediction=0 expected=0 OK cycles=30382
+vector 9: prediction=0 expected=0 OK cycles=30382
+vector 10: prediction=1 expected=1 OK cycles=30382
+vector 11: prediction=0 expected=0 OK cycles=30382
+vector 12: prediction=1 expected=1 OK cycles=30384
+vector 13: prediction=1 expected=1 OK cycles=30382
+vector 14: prediction=1 expected=1 OK cycles=30382
+vector 15: prediction=1 expected=1 OK cycles=30381
+vector 16: prediction=1 expected=1 OK cycles=30382
+vector 17: prediction=0 expected=0 OK cycles=30382
+vector 18: prediction=1 expected=1 OK cycles=30384
+vector 19: prediction=0 expected=0 OK cycles=30382
+---
+correct: 20/20
+total cycles: 607645
+avg cycles/inference: 30382
+RESULT: ALL VECTORS MATCH GOLDEN REFERENCE

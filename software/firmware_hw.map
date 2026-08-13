@@ -1,0 +1,149 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+                              src/main_hw.o (__udivsi3)
+
+Discarded input sections
+
+ .debug_line    0x00000000      0x153 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_line_str
+                0x00000000       0xa2 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_info    0x00000000       0x5f /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_abbrev  0x00000000       0x28 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_aranges
+                0x00000000       0x20 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ .debug_str     0x00000000       0xe9 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x00000000         0x00008000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x00000000      0x554
+                0x00000000                        . = ALIGN (0x4)
+ *(.text.start)
+ .text.start    0x00000000       0xa0 linker/start.o
+                0x00000000                _start
+ *(.text)
+ .text          0x000000a0        0x0 linker/start.o
+ .text          0x000000a0        0x0 src/main_hw.o
+ .text          0x000000a0      0x1b4 src/uart.o
+                0x000000a0                uart_init
+                0x000000ac                uart_putchar
+                0x000000e4                uart_puts
+                0x00000118                uart_print_dec
+                0x000001cc                uart_print_hex
+                0x00000248                uart_getchar_nonblock
+ .text          0x00000254        0x8 src/timer.o
+                0x00000254                timer_read_cycles
+ .text          0x0000025c       0xac src/accelerator_driver.o
+                0x0000025c                accel_run_inference
+                0x000002f4                accel_soft_reset
+ .text          0x00000308       0xb4 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+                0x00000308                __divsi3
+                0x00000310                __hidden___udivsi3
+                0x00000310                __udivsi3
+                0x00000358                __umodsi3
+                0x0000038c                __modsi3
+ *(.text*)
+ .text.startup  0x000003bc      0x198 src/main_hw.o
+                0x000003bc                main
+                0x00000554                        . = ALIGN (0x4)
+
+.rodata         0x00000554      0x1f0
+                0x00000554                        . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x00000554       0xb4 src/main_hw.o
+ .rodata        0x00000608       0x11 src/uart.o
+ *(.rodata*)
+ *fill*         0x00000619        0x3 
+ .rodata.str1.4
+                0x0000061c      0x128 src/main_hw.o
+ *(.srodata)
+ *(.srodata*)
+                0x00000744                        . = ALIGN (0x4)
+
+.rela.dyn       0x00000744        0x0
+ .rela.text.start
+                0x00000744        0x0 linker/start.o
+
+.data           0x00000744        0x0
+                0x00000744                        . = ALIGN (0x4)
+                0x00000744                        _sdata = .
+ *(.data)
+ .data          0x00000744        0x0 linker/start.o
+ .data          0x00000744        0x0 src/main_hw.o
+ .data          0x00000744        0x0 src/uart.o
+ .data          0x00000744        0x0 src/timer.o
+ .data          0x00000744        0x0 src/accelerator_driver.o
+ .data          0x00000744        0x0 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ *(.data*)
+ *(.sdata)
+ *(.sdata*)
+                0x00000744                        . = ALIGN (0x4)
+                0x00000744                        _edata = .
+
+.bss            0x00000744        0x0
+                0x00000744                        . = ALIGN (0x4)
+                0x00000744                        _sbss = .
+ *(.bss)
+ .bss           0x00000744        0x0 linker/start.o
+ .bss           0x00000744        0x0 src/main_hw.o
+ .bss           0x00000744        0x0 src/uart.o
+ .bss           0x00000744        0x0 src/timer.o
+ .bss           0x00000744        0x0 src/accelerator_driver.o
+ .bss           0x00000744        0x0 /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+ *(.bss*)
+ *(.sbss)
+ *(.sbss*)
+ *(COMMON)
+                0x00000744                        . = ALIGN (0x4)
+                0x00000744                        _ebss = .
+                0x00008000                        _stack_top = (ORIGIN (ram) + LENGTH (ram))
+LOAD linker/start.o
+LOAD src/main_hw.o
+LOAD src/uart.o
+LOAD src/timer.o
+LOAD src/accelerator_driver.o
+LOAD /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a
+OUTPUT(firmware_hw.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x1c
+ .riscv.attributes
+                0x00000000       0x1a linker/start.o
+ .riscv.attributes
+                0x0000001a       0x1c src/main_hw.o
+ .riscv.attributes
+                0x00000036       0x1c src/uart.o
+ .riscv.attributes
+                0x00000052       0x1c src/timer.o
+ .riscv.attributes
+                0x0000006e       0x1c src/accelerator_driver.o
+ .riscv.attributes
+                0x0000008a       0x1a /usr/lib/gcc/riscv64-unknown-elf/14.2.0/rv32i/ilp32/libgcc.a(div.o)
+
+.comment        0x00000000       0x18
+ .comment       0x00000000       0x18 src/main_hw.o
+                                 0x19 (size before relaxing)
+ .comment       0x00000018        0x0 src/uart.o
+                                 0x19 (size before relaxing)
+ .comment       0x00000018        0x0 src/timer.o
+                                 0x19 (size before relaxing)
+ .comment       0x00000018        0x0 src/accelerator_driver.o
+                                 0x19 (size before relaxing)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 src/main_hw.o
+ .note.GNU-stack
+                0x00000000        0x0 src/uart.o
+ .note.GNU-stack
+                0x00000000        0x0 src/timer.o
+ .note.GNU-stack
+                0x00000000        0x0 src/accelerator_driver.o

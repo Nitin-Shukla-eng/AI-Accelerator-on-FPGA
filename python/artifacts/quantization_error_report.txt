@@ -1,0 +1,8 @@
+Quantization Error Report
+==========================
+Floating-point test accuracy : 1.0000
+Quantized  (Q8.8) test accuracy : 1.0000
+Accuracy drop                   : 0.0000
+Max acceptable drop (config.py) : 0.0200
+W1 weight quantization MSE      : 9.784353e-07
+Prediction agreement (float vs quant): 1.0000

@@ -1,0 +1,325 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001c4b02abb30 .scope module, "output_weight_rom_tb" "output_weight_rom_tb" 2 26;
+ .timescale -9 -12;
+P_000001c4b02a6940 .param/l "ADDR_WIDTH" 1 2 28, +C4<00000000000000000000000000000100>;
+P_000001c4b02a6978 .param/l "DEPTH" 1 2 29, +C4<00000000000000000000000000010000>;
+v000001c4b0356cb0_0 .var "addr", 3 0;
+v000001c4b03567b0_0 .net "dout", 15 0, L_000001c4b02fb900;  1 drivers
+v000001c4b0356350_0 .var/i "fail_count", 31 0;
+v000001c4b03562b0_0 .var/i "i", 31 0;
+v000001c4b0356530_0 .var/i "pass_count", 31 0;
+S_000001c4b02abcc0 .scope task, "check" "check" 2 42, 2 42 0, S_000001c4b02abb30;
+ .timescale -9 -12;
+v000001c4b02ec020_0 .var "expected", 15 0;
+v000001c4b02eb9d0_0 .var "name", 255 0;
+TD_output_weight_rom_tb.check ;
+    %load/vec4 v000001c4b03567b0_0;
+    %load/vec4 v000001c4b02ec020_0;
+    %cmp/e;
+    %jmp/0xz  T_0.0, 6;
+    %load/vec4 v000001c4b0356530_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356530_0, 0, 32;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v000001c4b0356350_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356350_0, 0, 32;
+    %vpi_call 2 50 "$display", "[FAIL] %0s : addr=%0d dout=%0d (expected %0d)", v000001c4b02eb9d0_0, v000001c4b0356cb0_0, v000001c4b03567b0_0, v000001c4b02ec020_0 {0 0 0};
+T_0.1 ;
+    %end;
+S_000001c4b02f0f40 .scope module, "dut" "output_weight_rom" 2 37, 3 10 0, S_000001c4b02abb30;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "addr";
+    .port_info 1 /OUTPUT 16 "dout";
+L_000001c4b02fb900 .functor BUFZ 16, L_000001c4b03563f0, C4<0000000000000000>, C4<0000000000000000>, C4<0000000000000000>;
+v000001c4b02f45d0_0 .net *"_ivl_0", 15 0, L_000001c4b03563f0;  1 drivers
+v000001c4b02f10d0_0 .net *"_ivl_2", 5 0, L_000001c4b0356f30;  1 drivers
+L_000001c4b0357098 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v000001c4b02f1170_0 .net *"_ivl_5", 1 0, L_000001c4b0357098;  1 drivers
+v000001c4b02fe540_0 .net "addr", 3 0, v000001c4b0356cb0_0;  1 drivers
+v000001c4b02fe5e0_0 .net "dout", 15 0, L_000001c4b02fb900;  alias, 1 drivers
+v000001c4b0356990 .array "mem", 15 0, 15 0;
+L_000001c4b03563f0 .array/port v000001c4b0356990, L_000001c4b0356f30;
+L_000001c4b0356f30 .concat [ 4 2 0 0], v000001c4b0356cb0_0, L_000001c4b0357098;
+S_000001c4b02fe680 .scope begin, "t4_block" "t4_block" 2 105, 2 105 0, S_000001c4b02abb30;
+ .timescale -9 -12;
+v000001c4b0356210_0 .var "class0_hidden0", 15 0;
+v000001c4b03560d0_0 .var "class1_hidden0", 15 0;
+    .scope S_000001c4b02f0f40;
+T_1 ;
+    %pushi/vec4 65474, 0, 16;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 730, 0, 16;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 65460, 0, 16;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 65361, 0, 16;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 1016, 0, 16;
+    %ix/load 4, 4, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 65353, 0, 16;
+    %ix/load 4, 5, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 65424, 0, 16;
+    %ix/load 4, 6, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 774, 0, 16;
+    %ix/load 4, 7, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 65456, 0, 16;
+    %ix/load 4, 8, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 64992, 0, 16;
+    %ix/load 4, 9, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 65510, 0, 16;
+    %ix/load 4, 10, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 157, 0, 16;
+    %ix/load 4, 11, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 64657, 0, 16;
+    %ix/load 4, 12, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 136, 0, 16;
+    %ix/load 4, 13, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 147, 0, 16;
+    %ix/load 4, 14, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %pushi/vec4 64879, 0, 16;
+    %ix/load 4, 15, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001c4b0356990, 4, 0;
+    %end;
+    .thread T_1;
+    .scope S_000001c4b02abb30;
+T_2 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001c4b0356530_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001c4b0356350_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001c4b03562b0_0, 0, 32;
+T_2.0 ;
+    %load/vec4 v000001c4b03562b0_0;
+    %cmpi/s 16, 0, 32;
+    %jmp/0xz T_2.1, 5;
+    %load/vec4 v000001c4b03562b0_0;
+    %parti/s 4, 0, 2;
+    %store/vec4 v000001c4b0356cb0_0, 0, 4;
+    %delay 1000, 0;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1412505697, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1684304485, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1936924787, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 2003133808, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %store/vec4 v000001c4b02eb9d0_0, 0, 256;
+    %ix/getv/s 4, v000001c4b03562b0_0;
+    %load/vec4a v000001c4b0356990, 4;
+    %store/vec4 v000001c4b02ec020_0, 0, 16;
+    %fork TD_output_weight_rom_tb.check, S_000001c4b02abcc0;
+    %join;
+    %load/vec4 v000001c4b03562b0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b03562b0_0, 0, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %vpi_call 2 66 "$display", "[INFO] T1 complete: swept all %0d addresses", P_000001c4b02a6978 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v000001c4b0356cb0_0, 0, 4;
+    %delay 1000, 0;
+    %load/vec4 v000001c4b03567b0_0;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000001c4b0356990, 4;
+    %cmp/ne;
+    %jmp/0xz  T_2.2, 6;
+    %load/vec4 v000001c4b0356350_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356350_0, 0, 32;
+    %vpi_call 2 73 "$display", "[FAIL] T2a combinational read at addr 0" {0 0 0};
+    %jmp T_2.3;
+T_2.2 ;
+    %load/vec4 v000001c4b0356530_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356530_0, 0, 32;
+T_2.3 ;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v000001c4b0356cb0_0, 0, 4;
+    %delay 1000, 0;
+    %load/vec4 v000001c4b03567b0_0;
+    %ix/load 4, 15, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000001c4b0356990, 4;
+    %cmp/ne;
+    %jmp/0xz  T_2.4, 6;
+    %load/vec4 v000001c4b0356350_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356350_0, 0, 32;
+    %vpi_call 2 82 "$display", "[FAIL] T2b combinational read at addr 15 (no clock edge occurred)" {0 0 0};
+    %jmp T_2.5;
+T_2.4 ;
+    %load/vec4 v000001c4b0356530_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356530_0, 0, 32;
+    %vpi_call 2 85 "$display", "[PASS] T2 combinational (zero-latency) read confirmed -- dout followed addr with no clock edge" {0 0 0};
+T_2.5 ;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v000001c4b0356cb0_0, 0, 4;
+    %delay 1000, 0;
+    %pushi/vec4 84, 0, 32; draw_string_vec4
+    %pushi/vec4 862003314, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1700881440, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1937006946, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1768712564, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 2032166505, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1920168992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1919246692, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %store/vec4 v000001c4b02eb9d0_0, 0, 256;
+    %ix/load 4, 9, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000001c4b0356990, 4;
+    %store/vec4 v000001c4b02ec020_0, 0, 16;
+    %fork TD_output_weight_rom_tb.check, S_000001c4b02abcc0;
+    %join;
+    %delay 1000, 0;
+    %pushi/vec4 21555, 0, 32; draw_string_vec4
+    %pushi/vec4 1646293605, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1633951859, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1952539241, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1818850425, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 544433507, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1869505568, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1919246692, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %store/vec4 v000001c4b02eb9d0_0, 0, 256;
+    %ix/load 4, 9, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000001c4b0356990, 4;
+    %store/vec4 v000001c4b02ec020_0, 0, 16;
+    %fork TD_output_weight_rom_tb.check, S_000001c4b02abcc0;
+    %join;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v000001c4b0356cb0_0, 0, 4;
+    %delay 1000, 0;
+    %fork t_1, S_000001c4b02fe680;
+    %jmp t_0;
+    .scope S_000001c4b02fe680;
+t_1 ;
+    %load/vec4 v000001c4b03567b0_0;
+    %store/vec4 v000001c4b0356210_0, 0, 16;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v000001c4b0356cb0_0, 0, 4;
+    %delay 1000, 0;
+    %load/vec4 v000001c4b03567b0_0;
+    %store/vec4 v000001c4b03560d0_0, 0, 16;
+    %load/vec4 v000001c4b0356210_0;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000001c4b0356990, 4;
+    %cmp/ne;
+    %jmp/1 T_2.8, 6;
+    %flag_mov 8, 6;
+    %load/vec4 v000001c4b03560d0_0;
+    %ix/load 4, 8, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000001c4b0356990, 4;
+    %cmp/ne;
+    %flag_or 6, 8;
+T_2.8;
+    %jmp/0xz  T_2.6, 6;
+    %load/vec4 v000001c4b0356350_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356350_0, 0, 32;
+    %vpi_call 2 114 "$display", "[FAIL] T4 class-boundary addressing mismatch" {0 0 0};
+    %jmp T_2.7;
+T_2.6 ;
+    %load/vec4 v000001c4b0356530_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c4b0356530_0, 0, 32;
+    %load/vec4 v000001c4b0356210_0;
+    %load/vec4 v000001c4b03560d0_0;
+    %vpi_call 2 117 "$display", "[PASS] T4 class-boundary addressing: addr 0 (class0,hidden0)=%0d, addr 8 (class1,hidden0)=%0d", S<1,vec4,s16>, S<0,vec4,s16> {2 0 0};
+    %load/vec4 v000001c4b0356210_0;
+    %load/vec4 v000001c4b03560d0_0;
+    %cmp/e;
+    %jmp/0xz  T_2.9, 6;
+    %vpi_call 2 120 "$display", "[INFO] T4 note: class0/class1 weight at hidden0 happen to be numerically equal -- not a failure, just worth knowing" {0 0 0};
+T_2.9 ;
+T_2.7 ;
+    %end;
+    .scope S_000001c4b02abb30;
+t_0 %join;
+    %vpi_call 2 125 "$display", "--------------------------------------------------" {0 0 0};
+    %vpi_call 2 126 "$display", "output_weight_rom_tb summary: %0d passed, %0d failed", v000001c4b0356530_0, v000001c4b0356350_0 {0 0 0};
+    %load/vec4 v000001c4b0356350_0;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_2.11, 4;
+    %vpi_call 2 128 "$display", "output_weight_rom_tb: ALL TESTS PASSED" {0 0 0};
+    %jmp T_2.12;
+T_2.11 ;
+    %vpi_call 2 130 "$display", "output_weight_rom_tb: FAILURES PRESENT" {0 0 0};
+T_2.12 ;
+    %vpi_call 2 131 "$display", "--------------------------------------------------" {0 0 0};
+    %vpi_call 2 133 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "output_weight_rom_tb.v";
+    "../../rtl/memory/output_weight_rom.v";
