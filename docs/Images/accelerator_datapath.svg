@@ -1,0 +1,95 @@
+<svg viewBox="0 0 920 819" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="920" height="819" fill="#ffffff"/>
+
+<defs>
+  <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/>
+  </marker>
+  <marker id="arrowc" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#a78bfa"/>
+  </marker>
+</defs>
+
+<text x="460.0" y="30" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">tinyml_accelerator_top — Internal Datapath</text>
+<rect x="170.0" y="55" width="320" height="50" rx="8" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="74.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">FEATURE0..3 Registers</text>
+<text x="330.0" y="93.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">written by PicoRV32 (CPU)</text>
+
+<line x1="330" y1="105" x2="330" y2="127" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="170.0" y="127" width="150" height="55" rx="8" fill="#0e7490" stroke="#334155" stroke-width="1.5"/>
+<text x="245.0" y="148.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Hidden Weight ROM</text>
+<text x="245.0" y="167.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">4 × 8</text>
+
+<rect x="340.0" y="127" width="150" height="55" rx="8" fill="#0e7490" stroke="#334155" stroke-width="1.5"/>
+<text x="415.0" y="148.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Hidden Bias ROM</text>
+<text x="415.0" y="167.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">8</text>
+
+<line x1="245.0" y1="182" x2="330" y2="204" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<line x1="415.0" y1="182" x2="330" y2="204" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="170.0" y="204" width="320" height="55" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="225.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">MAC Units × 4 (reused)</text>
+<text x="330.0" y="244.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">feature × weight accumulation per hidden neuron</text>
+
+<line x1="330" y1="259" x2="330" y2="281" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="210.0" y="281" width="240" height="45" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="308.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Bias Addition</text>
+
+<line x1="330" y1="326" x2="330" y2="344" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="210.0" y="344" width="240" height="45" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="371.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">ReLU</text>
+
+<line x1="330" y1="389" x2="330" y2="411" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="170.0" y="411" width="320" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="432.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Hidden Activation Memory</text>
+<text x="330.0" y="451.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">8 × Q8.8 — accelerator-internal only</text>
+
+<line x1="330" y1="466" x2="330" y2="488" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="170.0" y="488" width="150" height="55" rx="8" fill="#0e7490" stroke="#334155" stroke-width="1.5"/>
+<text x="245.0" y="509.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Output Weight ROM</text>
+<text x="245.0" y="528.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">8 × 2</text>
+
+<rect x="340.0" y="488" width="150" height="55" rx="8" fill="#0e7490" stroke="#334155" stroke-width="1.5"/>
+<text x="415.0" y="509.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Output Bias ROM</text>
+<text x="415.0" y="528.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">2</text>
+
+<line x1="245.0" y1="543" x2="330" y2="565" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<line x1="415.0" y1="543" x2="330" y2="565" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="200.0" y="565" width="260" height="50" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="595.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Output MAC</text>
+
+<line x1="330" y1="615" x2="330" y2="637" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="190.0" y="637" width="280" height="50" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="656.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Comparator</text>
+<text x="330.0" y="675.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" opacity="0.9">argmax of 2 class scores</text>
+
+<line x1="330" y1="687" x2="330" y2="709" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow2)"/>
+
+<rect x="170.0" y="709" width="320" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="730.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Prediction Register</text>
+<text x="330.0" y="749.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">0 = Normal · 1 = Fault</text>
+
+<rect x="620.0" y="330" width="260" height="150" rx="8" fill="#7c3aed" stroke="#334155" stroke-width="1.5"/>
+<text x="750.0" y="370" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Controller FSM</text>
+<text x="750.0" y="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">IDLE → LOAD → HIDDEN</text>
+<text x="750.0" y="418" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">→ OUTPUT → DONE</text>
+<line x1="620.0" y1="405.0" x2="505.0" y2="231" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowc)" stroke-dasharray="5,4"/>
+
+<line x1="620.0" y1="405.0" x2="465.0" y2="366" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowc)" stroke-dasharray="5,4"/>
+
+<line x1="620.0" y1="405.0" x2="475.0" y2="590" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowc)" stroke-dasharray="5,4"/>
+
+<line x1="620.0" y1="405.0" x2="485.0" y2="662" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowc)" stroke-dasharray="5,4"/>
+
+<text x="750.0" y="505" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#334155" text-anchor="middle">dashed = control signals</text>
+<text x="330" y="794" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#334155" text-anchor="middle">Single shared clock, synchronous reset — no clock-domain crossing anywhere in the design.</text>
+</svg>

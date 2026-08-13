@@ -1,0 +1,78 @@
+<svg viewBox="0 0 780 829" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="780" height="829" fill="#ffffff"/>
+
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/>
+  </marker>
+</defs>
+
+<text x="390" y="30" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">TinyRISC-TinyML — End-to-End System Data Flow</text>
+<rect x="220.0" y="55" width="340" height="55" rx="8" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="76.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Bearing Vibration Dataset</text>
+<text x="390.0" y="96.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.9">raw accelerometer signal</text>
+
+<line x1="390" y1="110" x2="390" y2="135" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="220.0" y="135" width="340" height="60" rx="8" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="159.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Feature Extraction (Python, offline)</text>
+<text x="390.0" y="179.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.9">RMS · Peak · Kurtosis · Crest Factor</text>
+
+<line x1="390" y1="195" x2="390" y2="220" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="220.0" y="220" width="340" height="55" rx="8" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="241.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Training</text>
+<text x="390.0" y="261.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.9">4 → 8 → 2 feed-forward, ReLU</text>
+
+<line x1="390" y1="275" x2="390" y2="300" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="220.0" y="300" width="340" height="55" rx="8" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="321.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Quantization</text>
+<text x="390.0" y="341.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.9">float32 → Q8.8 fixed-point</text>
+
+<line x1="390" y1="355" x2="390" y2="380" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="220.0" y="380" width="340" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="401.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">export_model.py</text>
+<text x="390.0" y="421.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.9">single source of truth for both versions</text>
+
+<line x1="390" y1="435" x2="390" y2="457" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<line x1="390" y1="457" x2="180" y2="475" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="390" y1="457" x2="600" y2="475" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="20" y="475" width="320" height="60" rx="8" fill="#d97706" stroke="#334155" stroke-width="1.5"/>
+<text x="180.0" y="499.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Generated (Software)</text>
+<text x="180.0" y="519.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">weights.h · test_vectors.h · expected_outputs.h</text>
+
+<line x1="180" y1="535" x2="180" y2="557" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="20" y="557" width="320" height="65" rx="8" fill="#d97706" stroke="#334155" stroke-width="1.5"/>
+<text x="180.0" y="583.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Version 1 — Software Inference</text>
+<text x="180.0" y="603.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">PicoRV32 (RV32I) executes forward pass in C</text>
+
+<rect x="440" y="475" width="320" height="60" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="600.0" y="499.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Generated (Hardware)</text>
+<text x="600.0" y="519.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">hidden/output weight + bias ROM (.v)</text>
+
+<line x1="600" y1="535" x2="600" y2="557" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="440" y="557" width="320" height="65" rx="8" fill="#0891b2" stroke="#334155" stroke-width="1.5"/>
+<text x="600.0" y="583.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Version 2 — Hardware Accelerator</text>
+<text x="600.0" y="603.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">tinyml_accelerator_top (Verilog datapath)</text>
+
+<line x1="180" y1="622" x2="180" y2="622" stroke="#94a3b8" stroke-width="2"/>
+<line x1="600" y1="622" x2="600" y2="622" stroke="#94a3b8" stroke-width="2"/>
+<line x1="180" y1="622" x2="390" y2="652" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="600" y1="622" x2="390" y2="652" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="220.0" y="652" width="340" height="50" rx="8" fill="#475569" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="671.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">UART</text>
+<text x="390.0" y="691.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" opacity="0.9">results + performance metrics</text>
+
+<line x1="390" y1="702" x2="390" y2="724" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="220.0" y="724" width="340" height="55" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+<text x="390.0" y="745.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">PC — Result Capture &amp; Metric Logging</text>
+<text x="390.0" y="765.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.9">accuracy · latency · cycles · speedup</text>
+
+<text x="390" y="809" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#334155" text-anchor="middle">Both versions share one trained model and one export pipeline — the comparison is apples-to-apples.</text>
+</svg>

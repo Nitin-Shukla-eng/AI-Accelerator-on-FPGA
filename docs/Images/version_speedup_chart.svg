@@ -1,0 +1,20 @@
+<svg viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="820" height="420" fill="#ffffff"/>
+<text x="410.0" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="middle">Inference Latency — Version 1 vs Version 2 (avg cycles/inference)</text>
+<line x1="220.0" y1="70" x2="220.0" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="328.0" y1="70" x2="328.0" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="436.0" y1="70" x2="436.0" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="544.0" y1="70" x2="544.0" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="652.0" y1="70" x2="652.0" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="760.0" y1="70" x2="760.0" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="220" y="80" width="540" height="60" rx="6" fill="#d97706"/>
+<text x="208" y="115.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a" text-anchor="end">Version 1 (Software)</text>
+<text x="750" y="115.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="end">30,382 cycles</text>
+<rect x="220" y="180" width="6" height="60" rx="3" fill="#0891b2"/>
+<text x="208" y="215.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a" text-anchor="end">Version 2 (Hardware)</text>
+<line x1="226" y1="210.0" x2="246" y2="210.0" stroke="#334155" stroke-width="1.5"/>
+<text x="252" y="215.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0891b2">206 cycles — barely visible at this scale, that’s the point</text>
+<rect x="220" y="280" width="540" height="80" rx="10" fill="#0f172a"/>
+<text x="490.0" y="314" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">≈ 147.5× faster on the hardware accelerator</text>
+<text x="490.0" y="338" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">measured on PYNQ-Z2 hardware — 20/20 test vectors correct on both versions</text>
+</svg>
