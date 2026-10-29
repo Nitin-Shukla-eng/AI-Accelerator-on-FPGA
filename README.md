@@ -129,3 +129,4 @@ The complete pre-implementation specification set lives in `docs/`:
 ## License
 
 This project is licensed under the MIT License — see [LICENSE](LICENSE).
+# Smart-Water-Monitoring-ESP32-S3
